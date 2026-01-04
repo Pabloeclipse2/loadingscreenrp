@@ -1,0 +1,99 @@
+/* Fullscreen Loading Screen Slideshow + Fade */
+
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  overflow: hidden;
+  background: #000;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+}
+
+#slideshow {
+  position: fixed;
+  top:0; right:0; bottom:0; left:0;
+}
+
+/* Slides */
+.slide {
+  position: absolute;
+  top:0; right:0; bottom:0; left:0;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  opacity: 0;
+  transition: opacity 1200ms ease-in-out;
+}
+
+.slide.is-active {
+  opacity: 1;
+}
+
+/* Overlay */
+#overlay {
+  position: fixed;
+  top:0; right:0; bottom:0; left:0;
+  pointer-events: none;
+}
+
+/* ===== HEADLINE BAR (full width) ===== */
+.headline {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 26px 0;
+
+  text-align: center;
+  font-weight: 900;
+  font-size: clamp(42px, 6vw, 82px);
+  letter-spacing: 2px;
+
+  color: #ffffff;
+  text-transform: uppercase;
+
+  background: rgba(0, 0, 0, 0.55);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+
+  text-shadow:
+    0 2px 0 rgba(255,0,0,.35),
+    0 6px 28px rgba(0,0,0,.85);
+}
+
+/* Stylischer Text-Effekt */
+.headline span {
+  background: linear-gradient(90deg, #ffffff, #ff4a4a);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* ===== GMod Download Frame ===== */
+.gmod-download-frame {
+  position: absolute;
+  right: 24px;
+  bottom: 24px;
+
+  /* Höhe exakt wie GMod-Balken + Rand */
+  width: 420px;
+  height: 50px;
+
+  border: 3px solid rgba(220, 40, 40, 0.95);
+  border-radius: 4px;
+
+  box-shadow:
+    0 0 0 2px rgba(0,0,0,.7),
+    0 0 18px rgba(220, 40, 40, .55);
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .gmod-download-frame {
+    width: 300px;
+    height: 30px;
+    right: 14px;
+    bottom: 14px;
+  }
+}
