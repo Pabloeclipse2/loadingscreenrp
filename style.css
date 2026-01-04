@@ -13,13 +13,13 @@ body {
 
 #slideshow {
   position: fixed;
-  top:0; right:0; bottom:0; left:0;
+  top: 0; right: 0; bottom: 0; left: 0;
 }
 
 /* Slides */
 .slide {
   position: absolute;
-  top:0; right:0; bottom:0; left:0;
+  top: 0; right: 0; bottom: 0; left: 0;
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -34,7 +34,7 @@ body {
 /* Overlay */
 #overlay {
   position: fixed;
-  top:0; right:0; bottom:0; left:0;
+  top: 0; right: 0; bottom: 0; left: 0;
   pointer-events: none;
 }
 
@@ -73,19 +73,28 @@ body {
 /* ===== GMod Download Frame ===== */
 .gmod-download-frame {
   position: absolute;
-  right: 24px;
-  bottom: 24px;
+  right: 8px;       /* mehr nach rechts (vorher 24px) */
+  bottom: 48px;     /* höher (vorher 24px) */
 
-  /* Höhe exakt wie GMod-Balken + Rand */
   width: 420px;
   height: 50px;
 
-  border: 3px solid rgba(220, 40, 40, 0.95);
+  border: 2px solid rgba(220, 40, 40, 0.90); /* dünner */
   border-radius: 4px;
 
   box-shadow:
-    0 0 0 2px rgba(0,0,0,.7),
-    0 0 18px rgba(220, 40, 40, .55);
+    0 0 0 1px rgba(0,0,0,.65),              /* dünnerer Außenrand */
+    0 0 12px rgba(220, 40, 40, .45);        /* weniger Glow */
+}
+
+/* Graue Innen-Umrandung wie im Bild */
+.gmod-download-frame::before {
+  content: "";
+  position: absolute;
+  inset: 4px; /* Abstand nach innen (macht die graue "Kasten-Umrandung") */
+  border: 2px solid rgba(200, 200, 200, 0.85);
+  border-radius: 2px;
+  pointer-events: none;
 }
 
 /* Responsive */
@@ -93,7 +102,16 @@ body {
   .gmod-download-frame {
     width: 300px;
     height: 30px;
-    right: 14px;
-    bottom: 14px;
+    right: 6px;     /* auch mobil weiter rechts */
+    bottom: 34px;   /* auch mobil etwas höher */
+    border-width: 2px;
+    box-shadow:
+      0 0 0 1px rgba(0,0,0,.6),
+      0 0 10px rgba(220, 40, 40, .40);
+  }
+
+  .gmod-download-frame::before {
+    inset: 3px;
+    border-width: 2px;
   }
 }
