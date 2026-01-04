@@ -70,33 +70,6 @@ body {
   -webkit-text-fill-color: transparent;
 }
 
-/* ===== GMod Download Frame ===== */
-.gmod-download-frame {
-  position: absolute;
-  right: 8px;       /* mehr nach rechts (vorher 24px) */
-  bottom: 48px;     /* höher (vorher 24px) */
-
-  width: 420px;
-  height: 50px;
-
-  border: 2px solid rgba(220, 40, 40, 0.90); /* dünner */
-  border-radius: 4px;
-
-  box-shadow:
-    0 0 0 1px rgba(0,0,0,.65),              /* dünnerer Außenrand */
-    0 0 12px rgba(220, 40, 40, .45);        /* weniger Glow */
-}
-
-/* Graue Innen-Umrandung wie im Bild */
-.gmod-download-frame::before {
-  content: "";
-  position: absolute;
-  inset: 4px; /* Abstand nach innen (macht die graue "Kasten-Umrandung") */
-  border: 2px solid rgba(200, 200, 200, 0.85);
-  border-radius: 2px;
-  pointer-events: none;
-}
-
 /* Responsive */
 @media (max-width: 600px) {
   .gmod-download-frame {
