@@ -13,13 +13,19 @@ body {
 
 #slideshow {
   position: fixed;
-  top: 0; right: 0; bottom: 0; left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
 }
 
 /* Slides */
 .slide {
   position: absolute;
-  top: 0; right: 0; bottom: 0; left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -34,7 +40,10 @@ body {
 /* Overlay */
 #overlay {
   position: fixed;
-  top: 0; right: 0; bottom: 0; left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
   pointer-events: none;
 }
 
@@ -70,21 +79,32 @@ body {
   -webkit-text-fill-color: transparent;
 }
 
+/* ===== GMod Download Frame (NO BORDER / NO GLOW) ===== */
+.gmod-download-frame {
+  position: absolute;
+  right: 8px;       /* mehr nach rechts */
+  bottom: 48px;     /* etwas höher */
+
+  width: 420px;
+  height: 50px;
+
+  border: none;
+  box-shadow: none;
+  background: transparent;
+}
+
+/* Keine Pseudo-Elemente */
+.gmod-download-frame::before,
+.gmod-download-frame::after {
+  display: none;
+}
+
 /* Responsive */
 @media (max-width: 600px) {
   .gmod-download-frame {
     width: 300px;
     height: 30px;
-    right: 6px;     /* auch mobil weiter rechts */
-    bottom: 34px;   /* auch mobil etwas höher */
-    border-width: 2px;
-    box-shadow:
-      0 0 0 1px rgba(0,0,0,.6),
-      0 0 10px rgba(220, 40, 40, .40);
-  }
-
-  .gmod-download-frame::before {
-    inset: 3px;
-    border-width: 2px;
+    right: 6px;
+    bottom: 34px;
   }
 }
