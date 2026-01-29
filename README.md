@@ -2,7 +2,7 @@
 
 **Inhalt**
 - `index.html` – Hauptseite
-- `style.css` – Fullscreen Styles
+- `style.css` – Fullscreen Stylesj
 - `script.js` – Slideshow + Fade
 - `assets/images/` – Deine Bilder (aus `bilder.zip` übernommen)
 
