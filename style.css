@@ -70,6 +70,7 @@ body {
   text-shadow:
     0 2px 0 rgba(255,0,0,.35),
     0 6px 28px rgba(0,0,0,.85);
+  z-index: 10;
 }
 
 /* Stylischer Text-Effekt */
@@ -79,11 +80,50 @@ body {
   -webkit-text-fill-color: transparent;
 }
 
+/* ===== RULES BOX (NEU) ===== */
+.rules-box {
+  position: absolute;
+  top: 160px; /* Abstand von oben (unter der Headline) */
+  right: 50px; /* Abstand von rechts */
+  width: 400px;
+  
+  background: rgba(0, 0, 0, 0.55); /* Gleicher Style wie Headline */
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  
+  padding: 20px 30px;
+  color: #fff;
+  border-left: 4px solid #ff4a4a; /* Kleiner roter Akzent passend zum Titel */
+}
+
+.rules-box h2 {
+  margin-top: 0;
+  margin-bottom: 15px;
+  font-size: 24px;
+  text-transform: uppercase;
+  font-weight: 800;
+  color: #ff4a4a; /* Rote Überschrift */
+  text-shadow: 0 2px 4px rgba(0,0,0,0.8);
+}
+
+.rules-box ol {
+  margin: 0;
+  padding-left: 20px;
+}
+
+.rules-box li {
+  margin-bottom: 12px;
+  font-size: 16px;
+  line-height: 1.4;
+  font-weight: 500;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.8);
+}
+
 /* ===== GMod Download Frame (NO BORDER / NO GLOW) ===== */
 .gmod-download-frame {
   position: absolute;
-  right: 8px;       /* mehr nach rechts */
-  bottom: 48px;     /* etwas höher */
+  right: 8px;       
+  bottom: 48px;     
 
   width: 420px;
   height: 50px;
@@ -93,18 +133,17 @@ body {
   background: transparent;
 }
 
-/* Keine Pseudo-Elemente */
-.gmod-download-frame::before,
-.gmod-download-frame::after {
-  display: none;
-}
-
-/* Responsive */
-@media (max-width: 600px) {
-  .gmod-download-frame {
+/* Responsive Anpassung für kleinere Bildschirme */
+@media (max-width: 800px) {
+  .headline {
+    font-size: 40px;
+    padding: 15px 0;
+  }
+  
+  .rules-box {
+    top: 100px;
+    right: 20px;
     width: 300px;
-    height: 30px;
-    right: 6px;
-    bottom: 34px;
+    font-size: 14px;
   }
 }
